@@ -3,7 +3,7 @@ import 'home.dart';
 
 void main() {
   runApp(
-    Template()
+    const Template()
   ); 
 }
 
@@ -12,7 +12,7 @@ class Template extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
