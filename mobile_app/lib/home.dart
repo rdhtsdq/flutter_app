@@ -5,11 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:collection/collection.dart';
 
 class Home extends StatefulWidget {
-  Home({ Key? key }) : super(key: key);
-
-  
-
-  
+  const Home({ Key? key }) : super(key: key);
   @override
   State<Home> createState() => _HomeState();
 }
@@ -19,7 +15,13 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
      Tab(
        child: Container(
          margin: EdgeInsets.only(right: 23),
-         child: Text('Home'),
+         child: Text('New'),
+       ),
+     ),
+     Tab(
+       child: Container(
+         margin: EdgeInsets.only(right: 23),
+         child: Text('Trending'),
        ),
      ),
      Tab(
@@ -28,18 +30,6 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
          child: Text('Best Seller'),
        ),
      ),
-     Tab(
-       child: Container(
-         margin: EdgeInsets.only(right: 23),
-         child: Text('MyBook'),
-       ),
-     ),
-
-                  //   child: Container(
-                  //     margin: EdgeInsets.only(right: 23),
-                  //     child: Text("MyBook"),
-                  //   ),
-                  // ),
   ];
 
   List<String> pop = [
@@ -160,7 +150,7 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
                     fontSize: 14,fontWeight: FontWeight.w400,
                   ),
                   unselectedLabelStyle: GoogleFonts.openSans(
-                    fontSize:14,fontWeight:FontWeight.w300
+                    fontSize:14,fontWeight:FontWeight.w400
                   ),
                   tabs:myTab),
               ),
@@ -209,12 +199,12 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
                 children: pop.mapIndexed((index,pop) {
                   return Container(
                   margin:EdgeInsets.only(bottom: 19),
-                  height: 90,
+                  height: 120,
                   width: MediaQuery.of(context).size.width-50,
                   child: Row(
                     children: [
                       Container(
-                        height:100,
+                        height:120,
                         width: 80,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -255,196 +245,20 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
           ],
         )
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepPurple,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[200],
+        selectedItemColor: Colors.deepPurple,
+        items:[
+        
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.book),label: "My Book"),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: 'My Account'),
+      ] ),
     );
   }
 }
-
-// DefaultTabController(
-//       initialIndex: 0,
-//       length: 3, 
-//       child: Scaffold(
-//         appBar: AppBar(
-//           actions: [
-//             // TextField(decoration: InputDecoration(suffixIcon: Icon(Icons.searc))),
-//             IconButton(onPressed: (){}, icon: Icon(Icons.search,color: Colors.deepPurple,)),
-//             CircleAvatar(backgroundColor: Colors.deepPurple,radius: 15,),
-//             SizedBox(width: 20,)
-//           ],
-//           elevation: 0,
-//           backgroundColor: Colors.transparent,
-//           title: Text("MyLib" ,style: TextStyle(color: Colors.deepPurple,fontFamily: "ptserif"),),
-//           bottom: TabBar(
-//             unselectedLabelColor: Colors.black,
-//             // isScrollable: true,
-//             indicatorSize: TabBarIndicatorSize.label,
-//             labelStyle: TextStyle(fontSize: 10),
-//             indicatorColor: Color.fromRGBO(103, 58, 183, 1),
-//             labelColor: Colors.deepPurple,
-//             tabs: [
-              
-//               const Tab(text: "Home"),
-//               const Tab(text: "MyBook"),
-//               const Tab(text: "Report"),
-//             ]
-//           ),
-//         ),
-//         body: Page(),
-//       )
-//     );
-// class Page extends StatelessWidget {
-//   Page({
-//     Key? key,
-//     Widget? widget
-//   }) : super(key: key);
-
-//   final mycontainer = List<Container>.generate(7, (index){
-//     return Container();
-//   });
-//   @override
-//   Widget build(BuildContext context) {
-//     return TabBarView(
-//       children: [
-//         ListView(
-//           children: [
-//             Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Container(
-//                 padding: EdgeInsets.fromLTRB(30, 20, 0, 5),
-//                 child: Text(
-//                   "Halo , Radit",
-//                   style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),
-//                   textAlign: TextAlign.center,
-//                 ),
-//               ),
-//               Center(
-//                 child: Container(
-//                   height: 200,
-//                   width: 320,
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Container(
-//                         child: Padding(
-//                           padding: const EdgeInsets.all(10),
-//                           child: Text("Popular Book",style: TextStyle(fontSize: 15),),
-//                         ),
-//                       ),
-//                       SizedBox(height: 20,),
-//                       Padding(
-//                         padding: const EdgeInsets.fromLTRB(10,0,0,10),
-//                         child: SingleChildScrollView(
-//                           physics: BouncingScrollPhysics(),
-//                           scrollDirection: Axis.horizontal,
-//                           child: Row(
-//                             children: [
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,
-//                                 child: Card(
-//                                   color: Colors.red,
-//                                   child: InkWell(
-//                                     onTap: (){},
-//                                     child: Column(
-//                                       mainAxisAlignment: MainAxisAlignment.end,
-//                                       children: [
-//                                         Padding(
-//                                           padding: const EdgeInsets.all(8.0),
-//                                           child: Text("Judul",style: TextStyle(fontSize: 15),),
-//                                         )
-//                                       ],
-//                                     ),
-//                                   ),
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,  
-//                                 child: Card(
-//                                   color: Colors.orange,
-//                                   child: InkWell(
-//                                     onTap: (){},
-//                                     child: Column(
-//                                       mainAxisAlignment: MainAxisAlignment.end,
-//                                       children: [
-//                                         Padding(
-//                                           padding: const EdgeInsets.all(8.0),
-//                                           child: Text("Judul",style: TextStyle(fontSize: 15),),
-//                                         )
-//                                       ],
-//                                     ),
-//                                   ),
-//                                 ),
-//                               ),
-//                               GestureDetector(
-//                                 onTap: (){
-//                                   print("Tapped");
-//                                 },
-//                                 child: Container(
-//                                   height: 120,
-//                                   width: 90,
-//                                   child: Card(
-//                                     color: Colors.yellow,
-//                                   ),
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,
-//                                 child: Card(
-//                                   color: Colors.green,
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,
-//                                 child: Card(
-//                                   color: Colors.blue,
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,
-//                                 child: Card(
-//                                   color: Colors.indigo,
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 120,
-//                                 width: 90,
-//                                 child: Card(
-//                                   color: Colors.purple,
-//                                 ),
-//                               ),
-                              
-//                             ],
-//                           ),
-//                         ),
-//                       )
-//                     ],
-//                   ),
-//                 ),
-//               )
-//             ],
-//           ),
-//           Container(
-//             width:200,
-//             height: 100,
-//             child: Card(
-//               color: Colors.lightGreen,
-//             ),
-//           ),
-//           SizedBox(height: 10,),
-//         ]
-//         ),
-//         Container(
-//           child: Center(child: Text("Lesson")),
-//         ),
-//         Container(
-//           child: Center(child: Text("Report")),
-//         ),
-//       ],
-//     );
-//   }
-// }
