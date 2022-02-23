@@ -36,7 +36,11 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     'MyLib',
-                    style: heading2.copyWith(color: textBlack),
+                    style: GoogleFonts.notoSerifDisplay(
+                      fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.deepPurple
+                    )
                   ),
                   SizedBox(height: 20,),
                   Image.asset(

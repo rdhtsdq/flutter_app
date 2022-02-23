@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:collection/collection.dart';
 
 class Home extends StatefulWidget {
-  const Home({ Key? key }) : super(key: key);
+  final String name;
+  const Home({ Key? key ,this.name = 'User'}) : super(key: key);
   @override
   State<Home> createState() => _HomeState();
 }
@@ -33,8 +34,8 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
   ];
 
   List<String> pop = [
-    'Healthy Food',
-    'Life',
+    'Healthy Lifestyle',
+    'Lets Workout',
     'Magic World',
     'Sweet Life',
   ];
@@ -85,7 +86,7 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin  {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Halo,Radit",style:GoogleFonts.openSans(
+                Text("Hi, Admin",style:GoogleFonts.openSans(
                   fontSize: 13,
                   fontWeight:FontWeight.w400,
                   color: Colors.grey

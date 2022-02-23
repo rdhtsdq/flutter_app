@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'login_view.dart';
+import 'landing_page.dart';
 
 void main() {
   runApp(
@@ -15,7 +16,7 @@ class Template extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: LandingPage(),
     );
   }
 }
